@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math is Fun (Gateway)</title>
+    <title>Math is Fun</title>
     <style>
         body {
-            background-color: #0b1d3a; /* Dark blue background from image */
+            background-color: #0b1d3a;
             color: white;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top: 50px;
+            margin: 0;
         }
 
         .header-logo {
@@ -36,7 +37,6 @@
         .grid-button {
             background-color: white;
             color: #333;
-            text-decoration: none;
             padding: 30px 20px;
             text-align: center;
             border-radius: 8px;
@@ -46,12 +46,10 @@
             cursor: pointer;
             border: none;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        /* Hover effect: The "Challenge" of the interaction */
         .grid-button:hover {
             background-color: #e0e0e0;
             transform: scale(1.05);
@@ -69,21 +67,41 @@
     <div class="header-logo">Math is Fun</div>
 
     <div class="grid-container">
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Data</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Geometry</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Numbers</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Puzzles</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Money</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Algebra</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Calculus</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Physics</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Games</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Dictionary</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Worksheets</a>
-        <a href="https://thegamewebsite.github.io/realhome" class="grid-button">Measurement</a>
+        <button onclick="openSite()" class="grid-button">Data</button>
+        <button onclick="openSite()" class="grid-button">Geometry</button>
+        <button onclick="openSite()" class="grid-button">Numbers</button>
+        <button onclick="openSite()" class="grid-button">Puzzles</button>
+        <button onclick="openSite()" class="grid-button">Money</button>
+        <button onclick="openSite()" class="grid-button">Algebra</button>
+        <button onclick="openSite()" class="grid-button">Calculus</button>
+        <button onclick="openSite()" class="grid-button">Physics</button>
+        <button onclick="openSite()" class="grid-button">Games</button>
+        <button onclick="openSite()" class="grid-button">Dictionary</button>
+        <button onclick="openSite()" class="grid-button">Worksheets</button>
+        <button onclick="openSite()" class="grid-button">Measurement</button>
     </div>
 
     <p class="footer-text">"The math of survival requires the right tools."</p>
+
+    <script>
+        function openSite() {
+            // Create the blank window (The 'Empty Hand' of the board)
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            
+            // Create an iframe to house the real existence
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = "https://thegamewebsite.github.io/realhome";
+            
+            // Inject the iframe into the blank window
+            win.document.body.appendChild(iframe);
+        }
+    </script>
 
 </body>
 </html>
